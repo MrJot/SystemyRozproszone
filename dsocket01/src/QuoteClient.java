@@ -45,7 +45,9 @@ public class QuoteClient {
 		DatagramSocket socket = new DatagramSocket();
 
 		// send request
-		byte[] buf = new byte[256];
+		//byte[] buf = new byte[256];
+		String data = "grzegorz juszkiewicz";
+		byte[] buf = data.getBytes();
 		InetAddress address = InetAddress.getByName(args[0]);
 		DatagramPacket packet = new DatagramPacket(buf, buf.length, address, 4445);
 		socket.send(packet);
